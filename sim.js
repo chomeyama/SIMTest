@@ -81,23 +81,19 @@ function makeFileList(method_list_path) {
     // prepare file list of all methods
     var method = Array();
     for (var i = 0; i < method_list_path.length; i++) {
-        // method[0] is the reference method
-        // method[1]~ are the methods you compare
+        // if you want to shuffle to compare
+        // non parallel pairs, commentout the first line.
         method.push(loadText(method_list_path[i]));
-        if (enable_shuffle) {
-            method[i].shuffle();
-        }
+        // method.push(loadText(method_list_path[i]).shuffle());
     }
 
     var files = Array();
     for (var i = 0; i < method[0].length; i++) {
         // TODO: automate here
         /*
-            you have to customize this part
-            if you don't want to compare 3 methods
-            you need to rewrite 'pairs'.
-            'pairs' consists of n_P_2 triplets, where
-            'n' is num of methods you want to compare.
+            you have to customize this part.
+            carefully set depending on whether
+            you compare parallel pairs or not.
         */
         pairs = [
             [method[0][i], method[1][i]],
@@ -244,6 +240,3 @@ var scores;
 // since loadText() doesn't work in local
 var n = 0;
 var eval = document.getElementsByName("eval");
-
-// shuffle to compare non parallel pairs
-const enable_shuffle = true;
