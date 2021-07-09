@@ -84,6 +84,9 @@ function makeFileList(method_list_path) {
         // method[0] is the reference method
         // method[1]~ are the methods you compare
         method.push(loadText(method_list_path[i]));
+        if (enable_shuffle) {
+            method[i].shuffle();
+        }
     }
 
     var files = Array();
@@ -241,3 +244,6 @@ var scores;
 // since loadText() doesn't work in local
 var n = 0;
 var eval = document.getElementsByName("eval");
+
+// shuffle to compare non parallel pairs
+const enable_shuffle = true;
