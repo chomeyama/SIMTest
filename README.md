@@ -27,8 +27,7 @@ wav/
  ```
  The command ```find wav/set1 -name "*.wav" | grep "method1" > wav/set1/method1.list``` will be helpful to create list files.
 
-2. Rewrite mos.js depending on the structure of the wav directory. In most cases, you only need to customize two parts from line 45 and 95.
-   If you want to compare non parallel pairs, shuffle method*.list in advance or set "enable_shuffle = true" in the bottom of sim.js.
+2. Rewrite mos.js depending on the structure of the wav directory. In most cases, you only need to customize two parts from line 45 and 84.
 
 3. Rewrite index.html as you like. Note that my email address is written as contact info, so you may have to change it to your own one.
 
