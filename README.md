@@ -4,7 +4,7 @@
 
 This is a template of similarlity test.
 
-1. Create wav directory like the below example. Each set contains wav files and their file lists for the methods you want to compare. It's easier to understand if you actually browse the wav directory. The number of methods in each set does not have to match.
+1. Create wav directory like the below example. Each set contains wav files and their file lists for the methods you want to compare. It's easier to understand if you actually browse the wav directory.
 
 ```
 wav/
@@ -27,7 +27,8 @@ wav/
  ```
  The command ```find wav/set1 -name "*.wav" | grep "method1" > wav/set1/method1.list``` will be helpful to create list files.
 
-2. Rewrite mos.js depending on the structure of the wav directory. You only need to customize the part from line 45.
+2. Rewrite mos.js depending on the structure of the wav directory. In most cases, you only need to customize two parts from line 45 and 95.
+   If you want to compare non parallel pairs, shuffle method*.list in advance or set "enable_shuffle = true" in the bottom of sim.js.
 
 3. Rewrite index.html as you like. Note that my email address is written as contact info, so you may have to change it to your own one.
 
